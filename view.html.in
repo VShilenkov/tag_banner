@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Generator Tag</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dseg@0.46.0/css/dseg.min.css">
+    <style>
+        @CSS@
+    </style>
+</head>
+<body>
+
+    <div id="input-mode">
+        <div class="field-group">
+            <div id="category-path"></div>
+        </div>
+
+        <div class="row">
+            <div class="field-group">
+                <label>Year (YY)</label>
+                <input type="text" id="yearInput" maxlength="2">
+            </div>
+            <div class="field-group">
+                <label>Week (WW)</label>
+                <input type="text" id="weekInput" maxlength="2">
+            </div>
+            <div class="field-group">
+                <label>Number (XX)</label>
+                <div class="number-stepper">
+                    <button type="button" id="num-decrement" aria-label="Decrease number">−</button>
+                    <input type="number" id="numInput" value="1" min="1" max="99" step="1">
+                    <button type="button" id="num-increment" aria-label="Increase number">+</button>
+                </div>
+            </div>
+        </div>
+
+        <button id="generate-tag-button" onclick="generateTag()" disabled>SHOW ID</button>
+    </div>
+
+    <div id="prod-wrapper" onclick="exitProdMode()">
+        <div class="display-case">
+            <div class="display-screen">
+                <div id="prod-mode" class="lcd-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        @MODEL_JS@
+    </script>
+
+    <script>
+        @APP_JS@
+    </script>
+</body>
+</html>
